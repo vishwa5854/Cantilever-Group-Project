@@ -41,7 +41,7 @@ public class SignUpHandler implements HttpHandler {
 
         // this is a get request
         // load the signup page html into the string variable
-        String signUpPage = "signup page";
+        String signUpPage = "signUpRe.html";
         renderHTMLPage(httpExchange, signUpPage);
         String logMessage = httpExchange.getRequestMethod() +  httpExchange.getRequestURI().toString() + " " + httpExchange.getResponseCode();
         logger.log(Level.INFO, logMessage);
