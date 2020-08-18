@@ -21,6 +21,9 @@ public class Server {
         server.createContext("/", new HomeHandler());
         server.createContext("/login", new LoginHandler());
         server.createContext("/signup", new SignUpHandler());
+        server.createContext("/findBuses", new FindBusHandler());
+        server.createContext("/payMoney", new PaymentHandler());
+        server.createContext("/showTicket", new ShowTicket());
         server.start();
 
     }

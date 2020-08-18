@@ -9,16 +9,17 @@ import static com.cantilever.models.init.connection;
 
 public class Buses {
 
-    public static HashSet<Bus> findBuses(String source, String destination) throws SQLException {
+    public static HashSet<String> findBuses(String source, String destination) throws SQLException {
 
-        HashSet<Bus> response = new HashSet<>();
+        HashSet<String> response = new HashSet<>();
         String query = "SELECT * FROM buses where source = ? and destination = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, source);
         preparedStatement.setString(2, destination);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
-            response.add(new Bus(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getString(4), resultSet.getString(5)));
+            String temp = resultSet.getInt(1) + "," + resultSet.getString(2) + "," + resultSet.getString(4) + "," + resultSet.getString(5);
+            response.add(temp);
         }
 
         return response;
@@ -81,26 +82,6 @@ public class Buses {
             e.printStackTrace();
         }
         return false;
-
-    }
-
-}
-
-class Bus {
-
-    int busId;
-    String busName;
-    int numberOfSeatsAvailable;
-    String from;
-    String to;
-
-    Bus(int busId, String busName, int numberOfSeatsAvailable, String from, String to) {
-
-        this.busId = busId;
-        this.busName = busName;
-        this.numberOfSeatsAvailable = numberOfSeatsAvailable;
-        this.from = from;
-        this.to = to;
 
     }
 

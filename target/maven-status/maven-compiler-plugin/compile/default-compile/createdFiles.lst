@@ -1,6 +1,8 @@
 com/cantilever/models/init.class
 com/cantilever/routes/Helpers.class
 com/cantilever/routes/LoginHandler.class
+com/cantilever/routes/ShowTicket.class
+com/cantilever/routes/PaymentHandler.class
 com/cantilever/routes/SignUpHandler.class
 com/cantilever/routes/FindBusHandler.class
 com/cantilever/routes/HomeHandler.class
