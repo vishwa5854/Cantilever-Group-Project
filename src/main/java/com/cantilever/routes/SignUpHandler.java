@@ -1,5 +1,7 @@
 package com.cantilever.routes;
 
+import com.cantilever.Config;
+import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import org.json.simple.JSONObject;
@@ -7,6 +9,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
@@ -41,8 +44,7 @@ public class SignUpHandler implements HttpHandler {
 
         // this is a get request
         // load the signup page html into the string variable
-        String signUpPage = "signUpRe.html";
-        renderHTMLPage(httpExchange, signUpPage);
+        renderHTMLPage(httpExchange, Config.SIGN_UP);
         String logMessage = httpExchange.getRequestMethod() +  httpExchange.getRequestURI().toString() + " " + httpExchange.getResponseCode();
         logger.log(Level.INFO, logMessage);
 
@@ -59,7 +61,15 @@ public class SignUpHandler implements HttpHandler {
         JSONParser parser = new JSONParser();
         JSONObject user = (JSONObject) parser.parse(userData);
         if(saveUser(user.get("name").toString(), user.get("password").toString(), user.get("email").toString())){
-            renderHTMLPage(exchange, "login.html");
+//            renderHTMLPage(exchange, Config.HOME_PAGE);
+            Headers headers = exchange.getResponseHeaders();
+            headers.add("Content-Type", "text/HTML");
+            headers.add("Access-Control-Allow-Origin", "*");
+            String response = Config.ROOT;
+            exchange.sendResponseHeaders(200, response.length());
+            OutputStream outputStream = exchange.getResponseBody();
+            outputStream.write(response.getBytes());
+            outputStream.close();
         }
         else {
             renderHTMLPage(exchange, "signUpRe.html");

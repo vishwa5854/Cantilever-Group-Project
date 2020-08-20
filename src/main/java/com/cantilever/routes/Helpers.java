@@ -6,12 +6,12 @@ import com.sun.net.httpserver.HttpExchange;
 import java.io.*;
 
 
-
 public class Helpers {
 
     static void renderHTMLPage(HttpExchange httpExchange, String page) throws IOException {
         Headers headers = httpExchange.getResponseHeaders();
         headers.add("Content-Type", "text/HTML");
+        headers.add("Access-Control-Allow-Origin", "*");
         String response = readFile(page);
         httpExchange.sendResponseHeaders(200, response.length());
         OutputStream outputStream = httpExchange.getResponseBody();
@@ -20,10 +20,7 @@ public class Helpers {
     }
 
     static String readFile(String fileName) throws IOException {
-        ClassLoader classLoader = Helpers.class.getClassLoader();
-        String yay = classLoader.getResource(fileName).getFile();
-        File file = new File(yay);
-
+        File file = new File(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         StringBuilder ans = new StringBuilder();
         String temp = bufferedReader.readLine();
@@ -31,6 +28,7 @@ public class Helpers {
             ans.append(temp);
             temp = bufferedReader.readLine();
         }
+        System.out.println(ans);
         return new String(ans);
     }
 

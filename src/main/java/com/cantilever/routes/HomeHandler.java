@@ -1,5 +1,6 @@
 package com.cantilever.routes;
 
+import com.cantilever.Config;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
@@ -32,8 +33,7 @@ public class HomeHandler implements HttpHandler {
     public void handleGETRequest(HttpExchange exchange) throws IOException {
 
         // need to send a home html page as response
-        String homePage = "temp.html";
-        renderHTMLPage(exchange, homePage);
+        renderHTMLPage(exchange, Config.HOME_PAGE);
         String logMessage = exchange.getRequestMethod() +  exchange.getRequestURI().toString() + " " + exchange.getResponseCode();
         logger.log(Level.INFO, logMessage);
 
