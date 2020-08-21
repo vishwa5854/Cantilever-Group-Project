@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <style>
+      body{
+position: absolute;
+width: 100%;
+height: 100%;
+
+background-image: url("https://meme-rary.s3.amazonaws.com/5f103c1f25737612d07d7d462020-08-20T13%3A20%3A43.554Z1597929643554");
+}
+
+.navbar-brand{
+	padding-left: 1.2rem; 
+}
+
+.nav-item{
+	padding: 1.2rem;
+}
+
+.logo{
+	display: block;
+	margin: auto;
+	align-content: center;
+	padding-top: 2rem;
+	padding-right: 5rem;
+  padding-bottom: 4rem;
+}
+
+.login{
+  display: block;
+  background: url("https://raw.githubusercontent.com/vishwa5854/resources/master/cgp/css/bg.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 25rem;
+}
+
+.input{
+	display: block;
+	margin: auto;
+  border-radius: 10px;
+  width: 300.77px;
+  height: 50.04px;
+  background-color: #fff;
+}
+
+.loc{
+  margin-top: 10rem;
+}
+
+.quote{
+  color: #fff;
+  margin-top: 12rem;
+  text-align: center;
+}
+
+.forgot{
+  display: block;
+  text-align: center;
+}
+
+input[type=text] {
+  background-color: transparent;
+  color: white; 
+}
+
+::placeholder{
+  color: #fff;
+  text-align: center;
+  opacity: 0.7;
+}
+.submit{
+  display: block;
+  margin: auto;
+  width: 220px;
+  height: 50px;
+  color: #fff;
+  box-shadow: 5px 7px #434646;
+}
+
+.rectfrom{
+  position: absolute;
+  left: 8rem; 
+}
+
+.rectto{
+  position: absolute;
+  left: 33rem;
+}
+
+.rectgo{
+  position: absolute;
+  right: 5rem;
+}
+
+.go{
+  display: block;
+  width: 5rem;
+  background-color: #D72F2F;
+  border: #D1CACA;
+  padding: 1% 6%;
+  color: #fff;  
+}
+
+.topc{
+  position: absolute;
+  margin-top: 4rem;
+  margin-left: 40px;
+}
+
+.bottomc{
+  position: absolute;
+  margin-top: 14rem;
+  margin-left: 60px; 
+}
+
+.busd1{
+  display: block;
+  height: 7rem;
+  width: 75rem;
+  position: absolute;
+}
+
+.busdet1{
+  position: absolute;
+  top:5rem;
+  left:5rem;
+}
+
+h3,h4,h6,h5{
+  color: #fff;
+}
+
+.bdgo1{
+  display: block;
+  position: relative;
+  left: 60rem;
+  top: 2rem;
+}
+
+.busd2{
+  display: block;
+  height: 7rem;
+  width: 75rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 3.7rem;
+}
+
+.busdet2{
+  position: absolute;
+  bottom: 2rem;
+  left:9rem;
+}
+
+.bdgo2{
+  display: block;
+  position: absolute;
+  bottom: 3rem;
+  right: 9rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.seat {
+    float: left;
+    display: block;
+    margin: 15px;
+    background: #C4C4C4;
+    width: 2.5rem;
+    height: 1.875rem;
+    border-radius: 10px;
+}
+
+.seatdisp{
+    float: left;
+    display: block;
+    margin: 15px;
+    background: #C4C4C4;
+    width: 2.5rem;
+    height: 1.875rem;
+}
+
+.seat-select {
+  display: none;
+}
+
+.seat-select:checked+.seat {
+  background: #641F1F;
+}
+  
+.bgbus{
+  display: block;
+  height: 240px;
+  width: 750px;
+  position: absolute;
+  left: 16.5rem;
+  top:14.5rem;
+} 
+
+.bseats1{
+  margin-top: 2rem;
+  margin-left: 15rem;
+  position: absolute;
+  top: 12rem;
+}
+
+.bseats2{
+  margin-top: 6rem;
+  margin-left: 15rem;
+  position: absolute;
+  top:12rem;
+}
+
+.lastseat{
+  margin-top: 10rem;
+  margin-left: 15rem;
+  position: absolute;
+  top:12rem;
+}
+
+.bseats3{
+  margin-top: 14rem;
+  margin-left: 15rem; 
+  position: absolute;
+  top:12rem;
+}
+
+.busdet{
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+.stgo{
+  position: absolute;
+  right: 8rem;
+  bottom: 10.2rem;
+  padding: 0.7rem 2rem;
+}
+
+.fb{
+  position: absolute;
+  right: 8rem;
+  bottom: 5rem;
+  padding: 0.6rem 0.2rem;
+}
+
+.busdriver{
+  display: block;
+  height: 236px;
+  width: 200px;
+  position: absolute;
+  right: 22rem;
+  bottom: 9.6rem; 
+}
+
+.dvtxt{
+  color: #641F1F;
+  position: absolute;
+  right: 24rem;
+  bottom: 16rem;
+}
+
+.dvs{
+  display: block;
+  position: relative;
+  top: 27.2rem;
+  left: 2rem;
+}
+
+.seatindic1{
+  display: block;
+  position: absolute;
+  bottom: 6rem;
+  left:16rem;
+  width: 40px;
+  height: 30px;}
+
+.seatindic2{
+  position: absolute;
+  bottom: 4rem;
+  left:42rem;
+}
+
+#seattaken{
+  background: #641F1F;
+
+}
+
+.taken{
+  position: absolute;
+  bottom: 4.7rem;
+  right: 32rem;
+  color: #fff;
+}
+
+.avail{
+  position: absolute;
+  bottom: 4.7rem;
+  left:21rem;
+  color: #fff;
+}
+
+.paym{
+  position: absolute;
+  left: 5rem;
+  top: 10rem;
+  height: 25rem;
+  width: 75rem;
+}
+
+.paydet{
+  position: relative;
+  top:6rem;
+  left: 6rem;
+}
+
+.done{
+  position:relative;
+  top: 5rem;
+  left: 26rem;
+  color: #fddb3a;
+}
+  </style>  
+  <title></title>
+  <script>
+    let getSeats = async () => {
+          console.log(busIdd);
+          console.log("Sending data to server");
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "text/plain");
+          var raw = {"busId": busIdd};
+      
+          var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body : JSON.stringify(raw)
+          };
+
+          await fetch("https://e1b03411dfa7.ngrok.io/selectSeats/", requestOptions)
+              .then(response => response.json())
+                  .then(result => rearrange(result))
+                  .catch(error => console.log('error', error));
+          setTimeout(getSeats, 10);
+    }
+</script>
+<script>
+    let rearrange = (lol) => {
+        for(let i=1;i<=25; i++){
+            console.log(lol['seats'][i]);
+            if(lol['seats'][i] === "booked"){
+                document.getElementById("seat-" + i).checked = true;
+            }
+        }
+    }
+</script>
+<script>
+    var send = async () => {
+        await getSeatsHey();
+    }
+</script>
+<script>
+    var three =  async (seatsData, passengerName) => {
+        alert(seatsData['seats'][1] + " " + passengerName + " " + busIdd);
+        await four(seatsData, passengerName);
+    }
+</script>
+<script>
+    var four = async (seatsData, passengerName) => {
+        console.log("in four");
+        for(let i=1;i<=25;i++){
+            if(seatsData['seats'][i] === "Not booked"){
+                if(document.getElementById("seat-" + i).checked === true){
+                    console.log("Sending data to server");
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "text/plain");
+
+                    var raw = JSON.stringify({"busId":busIdd,"seatNumber":i,"customerName":passengerName});
+
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: raw
+                    };
+
+                    fetch("http://localhost:3000/payMoney", requestOptions)
+                    .then(response => response.text())
+                    .then(result => document.write(result))
+                    .catch(error => console.log('error', error));
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+    var getSeatsHey = async () => {
+        var name = prompt("Enter passenger name :" , "name");
+        console.log(name);
+          console.log(busIdd);
+          console.log("Sending data to server");
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "text/plain");
+          var raw = {"busId": busIdd};
+      
+          var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body : JSON.stringify(raw)
+          };
+
+          await fetch("https://e1b03411dfa7.ngrok.io/selectSeats/", requestOptions)
+              .then(response => response.json())
+                  .then(result => three(result, name))
+                  .catch(error => console.log('error', error));
+         
+    }
+    
+</script>
+
+</head>
+<body>
+	<div class="container-fluid">
+	<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href=""><h1>PeepBus</h1></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/signup">SignUp</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/">Login</a>
+            </li>
+        </ul>
+	</div>
+</nav>
+
+<div class="busdet">
+	<output name="detail"><h5 >Bus-id:</h5></output>
+	<br>
+	<output name="from-to"><h5>From To</h5></output>
+</div>
+
+<div class="blayout">
+<img src="https://meme-rary.s3.amazonaws.com/5f103c1f25737612d07d7d462020-08-20T15:15:24.845Z1597936524845" class="bgbus">
+<div class="bseats1">
+<form id="reservation" method="post" action="test.php">
+    <section id="seats">
+      <input id="seat-1" class="seat-select" type="checkbox" value="1" name="seat[]" />
+      <label for="seat-1" class="seat"></label>
+      <input id="seat-2" class="seat-select" type="checkbox" value="2" name="seat[]" />
+      <label for="seat-2" class="seat"></label>
+      <input id="seat-3" class="seat-select" type="checkbox" value="3" name="seat[]" />
+      <label for="seat-3" class="seat"></label>
+      <input id="seat-4" class="seat-select" type="checkbox" value="4" name="seat[]" />
+      <label for="seat-4" class="seat"></label>
+       <input id="seat-5" class="seat-select" type="checkbox" value="5" name="seat[]" />
+      <label for="seat-5" class="seat"></label>
+      <input id="seat-6" class="seat-select" type="checkbox" value="6" name="seat[]" />
+      <label for="seat-6" class="seat"></label>
+      <input id="seat-7" class="seat-select" type="checkbox" value="7" name="seat[]" />
+      <label for="seat-7" class="seat"></label>
+      <input id="seat-8" class="seat-select" type="checkbox" value="8" name="seat[]" />
+      <label for="seat-8" class="seat"></label>
+  </section>
+</form>
+</div>
+
+<div class="dvs">
+<img src="https://meme-rary.s3.amazonaws.com/5f103c1f25737612d07d7d462020-08-20T18%3A48%3A10.578Z1597949290578" class="busdriver">
+<h4 class="dvtxt">Driver Space</h4>
+</div>
+
+<div class="bseats2">
+	<form id="reservation" method="post" action="test.php">
+    <section id="seats">
+      <input id="seat-9" class="seat-select" type="checkbox" value="9" name="seat[]" />
+      <label for="seat-9" class="seat"></label>
+      <input id="seat-10" class="seat-select" type="checkbox" value="10" name="seat[]" />
+      <label for="seat-10" class="seat"></label>
+      <input id="seat-11" class="seat-select" type="checkbox" value="11" name="seat[]" />
+      <label for="seat-11" class="seat"></label>
+      <input id="seat-12" class="seat-select" type="checkbox" value="12" name="seat[]" />
+      <label for="seat-12" class="seat"></label>
+       <input id="seat-13" class="seat-select" type="checkbox" value="13" name="seat[]" />
+      <label for="seat-13" class="seat"></label>
+      <input id="seat-14" class="seat-select" type="checkbox" value="14" name="seat[]" />
+      <label for="seat-14" class="seat"></label>
+      <input id="seat-15" class="seat-select" type="checkbox" value="15" name="seat[]" />
+      <label for="seat-15" class="seat"></label>
+      <input id="seat-16" class="seat-select" type="checkbox" value="16" name="seat[]" />
+      <label for="seat-16" class="seat"></label>
+</section>
+</form>
+</div>
+
+<div class="lastseat">
+	<form id="reservation" method="post" action="test.php">
+    <section id="seats">
+	 <input id="seat-17" class="seat-select" type="checkbox" value="29" name="seat[]" />
+      <label for="seat-17" class="seat"></label>
+  </section>
+</form>
+</div>
+
+<div class="bseats3">
+	<form id="reservation" method="post" action="test.php">
+    <section id="seats">
+      <input id="seat-18" class="seat-select" type="checkbox" value="21" name="seat[]" />
+      <label for="seat-18" class="seat"></label>
+      <input id="seat-19" class="seat-select" type="checkbox" value="22" name="seat[]" />
+      <label for="seat-19" class="seat"></label>
+      <input id="seat-20" class="seat-select" type="checkbox" value="23" name="seat[]" />
+      <label for="seat-20" class="seat"></label>
+      <input id="seat-21" class="seat-select" type="checkbox" value="24" name="seat[]" />
+      <label for="seat-21" class="seat"></label>
+       <input id="seat-22" class="seat-select" type="checkbox" value="25" name="seat[]" />
+      <label for="seat-22" class="seat"></label>
+      <input id="seat-23" class="seat-select" type="checkbox" value="26" name="seat[]" />
+      <label for="seat-23" class="seat"></label>
+      <input id="seat-24" class="seat-select" type="checkbox" value="27" name="seat[]" />
+      <label for="seat-24" class="seat"></label>
+      <input id="seat-25" class="seat-select" type="checkbox" value="28" name="seat[]" />
+	  <label for="seat-25" class="seat"></label>
+</section>
+</form>
+</div>
+</div>
+
+<div class="cgo">
+<input class="input go stgo" type="submit" name="go" value="Go!" size="30px" onclick="send()">
+</div>
+
+
+
+<div class="seatindic1">
+      <input id="seat" class="seat-select" type="checkbox" value="27" />
+      <label for="seat" class="seatdisp"></label>
+</div>
+<div class="avail">
+      <h4> - Available</h4>
+</div>
+<div class="seatindic2">
+      <input id="seat-0" class="seat-select" type="checkbox" value="0" />
+	  <label for="seat-0" class="seat"></label>
+</div>
+<div class="taken">
+	  <h4> - Taken</h4>
+</div>
+</div>
+<script>
+    document.getElementById("seat-0").checked = true;
+    window.onload = () => {
+        getSeats();
+    }
+</script>
+</body>
+</html>
