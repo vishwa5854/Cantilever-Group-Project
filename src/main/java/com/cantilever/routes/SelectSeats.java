@@ -46,7 +46,7 @@ public class SelectSeats implements HttpHandler {
         te = te.replace("?", "=");
         String[] queryData = te.split("=");
         System.out.println(queryData[0] + queryData[1]);
-        String append = "<script>let busIdd='"+ queryData[1] + "';</script>";
+        String append = "<script>var busIdd='"+ queryData[1] + "';</script>";
         System.out.println("append" + append);
         Headers headers = httpExchange.getResponseHeaders();
         headers.add("Content-Type", "text/HTML");
