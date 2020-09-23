@@ -30,7 +30,7 @@ public class AdminHandler implements HttpHandler {
         try {
             JSONObject busInfo = (JSONObject) parser.parse(busDetails);
                 if(Buses.createBus(Integer.parseInt(busInfo.get("busId").toString()), busInfo.get("busName").toString(), busInfo.get("source").toString(), busInfo.get("destination").toString(), Integer.parseInt(busInfo.get("numberOfSeats").toString()))){
-                String response = "Succesfully added the bus";
+                String response = "Successfully added the bus";
                 Headers headers = httpExchange.getResponseHeaders();
                 headers.add("Content-Type", "text");
                 OutputStream outputStream = httpExchange.getResponseBody();

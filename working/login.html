@@ -12,8 +12,7 @@
             myHeaders.append("Content-Type", "text/plain");
             let a = document.getElementById("username").value;
             let b = document.getElementById("password").value;
-            let c = document.getElementById("email").value;
-            var raw = {"name": a,"password":b, "email" : c};
+            var raw = {"name": a,"password":b};
 
 
             var requestOptions = {
@@ -22,14 +21,11 @@
                 body: JSON.stringify(raw),
             };
 
-            await fetch("http://localhost:3000/signup", requestOptions)
+            await fetch("http://localhost:3000/login", requestOptions)
                 .then(response => response.text())
                 .then(result => window.location.replace(result)
                 )
                 .catch(error => console.log('error', error));
-
-
-
         }
     </script>
     <style>
@@ -335,24 +331,22 @@
         <!-- Icon -->
         <div class="fadeIn first">
             <a href="http://localhost:3000/">
-                <img src="https://lh3.googleusercontent.com/ogw/ADGmqu9WvTyTbm8pLwrba_1hH27c0WvPyTehabNpCAwl=s83-c-mo" id="icon" alt="User Icon"/>
+            <img src="https://lh3.googleusercontent.com/ogw/ADGmqu9WvTyTbm8pLwrba_1hH27c0WvPyTehabNpCAwl=s83-c-mo" id="icon" alt="User Icon"/>
             </a>
         </div>
 
         <br>
 
         <!-- Login Form -->
-        <input type="text" id="email" class="fadeIn second" name="login" placeholder="email">
-        <br>
-        <input type="text" id="username" class="fadeIn second" name="login" placeholder="username">
-        <br>
-        <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
-        <br>
-        <br>
-        <input type="submit" class="fadeIn fourth" value="SIGN UP" onclick="send()">
+            <input type="text" id="username" class="fadeIn second" name="login" placeholder="username">
+            <br>
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+            <br>
+            <br>
+            <input type="submit" class="fadeIn fourth" value="LOGIN" onclick="send()">
 
         <div id="formFooter">
-            <a class="underlineHover" href="http://localhost:3000/">Log In Instead?</a>
+            <a class="underlineHover" href="http://localhost:3000/signup">Sign Up Instead?</a>
         </div>
     </div>
 </div>

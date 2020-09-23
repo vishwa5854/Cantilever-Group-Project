@@ -72,7 +72,8 @@ public class Buses {
             preparedStatement.setString(5, destination);
             preparedStatement.executeUpdate();
             for (int i = 0; i < 40; i++) {
-                PreparedStatement statement = connection.prepareStatement("insert into seats values(?, ?,'lol', 'Not booked')");
+                String query= "insert into seats values(?, ?,'lol', 'Not booked')";
+                PreparedStatement statement = connection.prepareStatement(query);
                 statement.setInt(1, busId);
                 statement.setInt(2, i + 1);
                 statement.execute();

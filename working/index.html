@@ -10,8 +10,9 @@
 position: absolute;
 width: 100%;
 height: 100%;
+        background: #0d0d0d;
 
-background-image: url("https://meme-rary.s3.amazonaws.com/5f103c1f25737612d07d7d462020-08-20T13%3A20%3A43.554Z1597929643554");
+
 }
 
 .navbar-brand{
@@ -49,7 +50,7 @@ background-color: #fff;
 }
 
 .go{
-background-color: #D72F2F;
+background-color: #39ace7;
 border: #D1CACA;
 padding: 1% 6%;
 }
@@ -259,7 +260,7 @@ color: #fff;
                 body: JSON.stringify(raw),
             };
 
-            await fetch("https://e1b03411dfa7.ngrok.io/login", requestOptions)
+            await fetch("http://localhost:3000/login", requestOptions)
                 .then(response => response.text())
                     .then(result => window.location.replace(result)
                     )
@@ -269,7 +270,7 @@ color: #fff;
 </head>
 <body>
 	<div class="container-fluid">
-	<nav class="navbar navbar-expand-lg navbar-dark">
+	<nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href=""><h1>PeepBus</h1></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -277,13 +278,13 @@ color: #fff;
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/">Home</a>
+            <a class="nav-link" href="http://localhost:3000/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/signup">SignUp</a>
+            <a class="nav-link" href="http://localhost:3000/signup">SignUp</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://e1b03411dfa7.ngrok.io/">Login</a>
+            <a class="nav-link" href="http://localhost:3000/">Login</a>
         </li>
     </ul>
 	</div>

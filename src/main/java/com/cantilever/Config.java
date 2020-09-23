@@ -2,13 +2,14 @@ package com.cantilever;
 
 public class Config {
 
-    public static final String HOME_PAGE = "/home/vishwanath/cantilever-project/working/index.html";
-    public static final String SIGN_UP = "/home/vishwanath/cantilever-project/working/signup.html";
-    public static final String FIND_BUSES = "/home/vishwanath/cantilever-project/working/page2.html";
-    public static final String FETCH_BUSES = "/home/vishwanath/cantilever-project/working/busdetails.html";
-    public static final String BOOK_A_SEAT = "/home/vishwanath/cantilever-project/working/seats.html";
-    public static final String PAYMENT_PAGE = "/home/vishwanath/cantilever-project/working/bill.html";
+    private static final String DIRECTORY_PATH = "C:/Users/vishw/IdeaProjects/Cantilever-Group-Project/working/";
+    public static final String HOME_PAGE = DIRECTORY_PATH + "login.html";
+    public static final String SIGN_UP = DIRECTORY_PATH + "signup.html";
+    public static final String FIND_BUSES = DIRECTORY_PATH + "page2.html";
+    public static final String FETCH_BUSES = DIRECTORY_PATH + "busdetails.html";
+    public static final String BOOK_A_SEAT = DIRECTORY_PATH + "seats.html";
+    public static final String PAYMENT_PAGE = DIRECTORY_PATH + "bill.html";
     public static final String TICKET_PAGE = "";
-    public static final String ROOT = "https://e1b03411dfa7.ngrok.io/";
+    public static final String ROOT = "http://localhost:3000/";
 
 }

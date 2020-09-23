@@ -10,7 +10,7 @@ public class init {
 
     static {
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/crueger", "root", "password");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/crueger", "root", "");
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }
